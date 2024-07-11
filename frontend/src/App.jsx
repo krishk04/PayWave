@@ -3,7 +3,9 @@ import {Signup} from "./pages/Signup.jsx"
 import {Signin} from "./pages/Signin.jsx"
 import {Dashboard} from "./pages/Dashboard.jsx"
 import { SendMoney } from "./pages/SendMoney.jsx";
+import {TransferSuccessful} from "./pages/TransferSuccessful.jsx"
 function App() {
+  
 
   return (
     <div>
@@ -13,6 +15,7 @@ function App() {
       <Route path="/signin" element={<Signin />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/send" element={<SendMoney />} />
+      <Route path="/success" element={<TransferSuccessful />} />
      </Routes>
      </BrowserRouter>
     </div>
