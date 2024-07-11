@@ -9,9 +9,19 @@ import axios from "axios"
 
 
 export const TransferSuccessful=()=>{
-    const [searchParams]=useSearchParams();
-  const balance=searchParams.get("balance");
+   const [balance,setBalance]=useState(0);
+  
  const navigate=useNavigate();
+ useEffect(()=>{
+    axios.get("http://localhost:3000/api/v1/account/balance",{
+        headers:{
+            Authorization:"Bearer "+localStorage.getItem("token")
+        }
+    })
+    .then(function(response){
+        setBalance(response.data.balance);
+    })
+ },[])
  
   
     return<>
